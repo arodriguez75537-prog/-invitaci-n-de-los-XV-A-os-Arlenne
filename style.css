@@ -1,0 +1,258 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap');
+
+/* COLORES */
+:root {
+    --azul: #102746;
+    --dorado: #c59a4a;
+    --crema: #f9edda;
+}
+
+/* CONFIGURACIÓN GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 20px;
+    background: var(--azul);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CONTENEDOR */
+.invitacion {
+    width: 100%;
+    max-width: 750px;
+    margin: auto;
+    position: relative;
+}
+
+/* PORTADA */
+.portada-contenedor {
+    text-align: center;
+}
+
+.portada {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 3px solid var(--dorado);
+    border-radius: 5px;
+}
+
+/* BOTONES */
+button {
+    display: block;
+    padding: 13px 25px;
+    margin: 20px auto;
+    color: var(--crema);
+    background: var(--azul);
+    border: 3px double var(--dorado);
+    border-radius: 30px;
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#botonCerrar {
+    position: relative;
+    top: -55px;
+}
+
+button:hover {
+    background: var(--dorado);
+    color: var(--azul);
+    transform: translateY(-3px);
+}
+
+/* OCULTAR INVITACIÓN */
+.oculto {
+    display: none !important;
+}
+
+/* CONTENIDO */
+.contenido {
+    width: 100%;
+    padding: 0;
+    margin: auto;
+    background: transparent;
+    text-align: center;
+}
+
+/* IMAGEN COMPLETA */
+.imagen-con-ubicacion {
+    position: relative;
+    width: 100%;
+    max-width: 750px;
+    margin: auto;
+}
+
+.invitacion-completa {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* BOTÓN DE UBICACIÓN */
+.boton-ubicacion {
+    position: absolute;
+    top: 81%;
+    left: 26%;
+    transform: translate(-50%, -50%);
+    padding: 9px 18px;
+    background: var(--azul);
+    color: var(--crema);
+    border: 3px double var(--dorado);
+    border-radius: 25px;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(8px, 1.6vw, 12px);
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 3px 8px #0005;
+    z-index: 5;
+}
+
+/* CONTADOR */
+.contador {
+    position: absolute;
+    top: 76.5%;
+    left: 74%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(2px, 0.5vw, 5px);
+    z-index: 4;
+}
+
+/* CUADROS */
+.contador-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: clamp(27px, 5.3vw, 40px);
+    min-width: 0;
+    padding: 3px 2px;
+    background: var(--azul);
+    border: 2px solid var(--dorado);
+    border-radius: 7px;
+    color: #fff0d1;
+    box-shadow: 0 2px 6px #0004;
+}
+
+/* NÚMEROS */
+.contador-item span {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(10px, 1.8vw, 13px);
+    font-weight: bold;
+    line-height: 1.1;
+}
+
+/* ETIQUETAS */
+.contador-item small {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(5px, 0.9vw, 7px);
+    color: #e9bd69;
+    line-height: 1;
+}
+
+
+.contenido:not(.oculto) {
+    animation: aparecer 1s ease;
+}
+
+.boton-ubicacion:hover {
+    background: #c59a4a;
+    color: #102746;
+    border-color: #102746;
+    transition: 0.3s;
+}
+
+
+/* =================================
+   RESPONSIVE PARA CELULARES
+================================= */
+
+@media screen and (max-width: 600px) {
+
+    body {
+        padding: 8px;
+        min-height: 100vh;
+        align-items: flex-start;
+    }
+
+    .invitacion {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .portada {
+        width: 100%;
+        height: auto;
+    }
+
+    .contenido {
+        width: 100%;
+        padding: 0;
+    }
+
+    .imagen-con-ubicacion {
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+    }
+
+    .invitacion-completa {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* UBICACIÓN */
+    .boton-ubicacion {
+        top: 81%;
+        left: 26%;
+        padding: 6px 10px;
+        font-size: clamp(7px, 2.2vw, 11px);
+    }
+
+    /* CONTADOR */
+    .contador {
+        top: 76.5%;
+        left: 74%;
+        gap: 2px;
+    }
+
+    .contador-item {
+        width: clamp(25px, 7vw, 34px);
+        padding: 2px;
+    }
+
+    .contador-item span {
+        font-size: clamp(9px, 2.5vw, 12px);
+    }
+
+    .contador-item small {
+        font-size: clamp(5px, 1.4vw, 7px);
+    }
+
+    /* BOTÓN CONFIRMAR */
+    #botonCerrar {
+        top: -35px;
+        max-width: 95%;
+        padding: 10px 14px;
+        font-size: 11px;
+    }
+
+}

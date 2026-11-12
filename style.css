@@ -223,8 +223,8 @@ button:hover {
     .boton-ubicacion {
         top: 78.8%;
         left: 26%;
-        padding: 6px 10px;
-        font-size: clamp(7px, 2.2vw, 11px);
+        padding: 3px 6px;
+        font-size: clamp(6px, 1.8vw, 9px);
     }
 
     /* CONTADOR */
